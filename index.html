@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoSoluciones - Soporte Técnico</title>
+    <link rel=""preconnect" href=""https://fonts.googleapis.com">
+    <link rel=""preconnect" href=""https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class=" brand">TecnoSoluciones</a>
+            <nav>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
+                <a href="tyc.html">Términos</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="container">
+            <h1>Tu computador funcionando, sin complicaciones.</h1>
+            <p>Servicios de soporte informático y mantenimiento de equipos.</p>
+            <div>
+                <a href="#contacto" class="btn">Solicitar asistencia</a>
+                <a href="#servicios" class="btn btn-ghost">Ver precios</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="servicios">
+            <h2>Catálogo de Servicios y Precios</h2>
+            <p class="note">Nota: Los siguientes precios son valores de referencia para fines académicos.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Descripción</th>
+                            <th class="num">Precio (Académico)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mantenimiento Preventivo</td>
+                            <td>Limpieza física de componentes y cambio de pasta térmica.</td>
+                            <td class="num">$45.000 COP</td>
+                        </tr>
+                        <tr>
+                            <td>Instalación de Software</td>
+                            <td>Instalación de sistemas operativos y paquetes de programas esenciales.</td>
+                            <td class="num">$30.000 COP</td>
+                        </tr>
+                        <tr>
+                            <td>Configuración de Redes</td>
+                            <td>Configuración de enrutadores, Wi-Fi y seguridad local.</td>
+                            <td class="num">$50.000 COP</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Formulario de Solicitud de Asistencia</h2>
+            <form id="form-contacto">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="servicio-select">Servicio Requerido</label>
+                <select id="servicio-select" name="servicio" required>
+                    <option value="preventivo">Mantenimiento Preventivo</option>
+                    <option value="software">Instalación de Software</option>
+                    <option value="redes">Configuración de Redes</option>
+                </select>
+
+                <label for="descripcion">Descripción del Problema:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+                <button type="submit">Enviar Solicitud</button>
+                <p id="form-estado" role="status" aria-live="polite"></p></p>
+            </form>
+            <p class="note"><em>Aviso: Este formulario es demostrativo y no procesa solicitudes reales.</em></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>TecnoSoluciones - Operado por el Equipo de Desarrollo Académico SENA</span>
+            <a href="tyc.html">Términos y Condiciones (Aviso de Sitio Demostrativo)</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+/* ------------- Variables ------------- */
+:root {
+    --ink: #12202b;
+    --ink-soft: #4a5a66;
+    --paper: #f5f7f8;
+    --white: #ffffff;
+    --teal: #0e7c86;
+    --teal-dark: #0a5f67;
+    --amber: #f2a900;
+    --line: #d8e0e5;
+
+    --font-head: "Sora", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+
+    --header-h: 64px;
+    --footer-h: 56px:
+}
+
+/* ------------- Base ------------- */
+*, *::before, *::after { box-sizing:border-box; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+    margin: 0;
+    font-family: var(font-body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    /* Espacio para que el footer fijo no tape el final del contenido */
+    padding-bottom: calc(var(--footer-h) + 32px);
+}
+
+h1, h2 {font-family: var(font-head); line-height: 1.2; margin: 0 0 .6em; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 600; }
+p  { margin: 0 0 1em; }
+a  { color: var(--teal-dark); }
+
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+.container { width: min(1000px, 100% - 2.5rem); margin-inline: auto; }
+
+/* ------------- Header ------------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: var(--header-h);
+    background: var(--ink);
+}
+.header-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.brand {
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+header nav { display: flex; gap: .25rem; }
+header nav a {
+    color: #cfdbe2;
+    text-decoration: none;
+    font-weight: 600;
+    padding: .45rem .8rem;
+    border-radius: 8px;
+}
+header nav a:hover { background: rgba(255,255,255,.1); color: var(--white); }
+
+/* ------------- Hero ------------- */
+.hero {
+    background: var(--ink);
+    color: var(--white);
+    padding: clamp(2.5rem, 7vw, 4.5rem) 0 clamp(3rem, 8vw, 5.5rem);
+    border-bottom: 4px solid var(--amber);
+}
+.hero p { color: #cfdbe2; font-size: 1.2rem; max-width: 34em }
+.hero-small { padding: 2.5rem 0 3rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+
+/* ------------- Botones ------------- */
+.btn, button {
+    display: inline-block;
+    padding: .75rem 1.4rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: var(--amber);
+    color: var(--ink);
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: .98rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+}
+.btn:hover, button:hover { background: #ffc233; }
+.btn-ghost { background: transparent; color: var(--white); border-color: #4a6275; }
+.btn-ghost:hover { background: transparent; border-color: var(--white); }
+
+/* ------------- Secciones ------------- */
+main { padding-top: 2.5rem}
+
+main section {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    margin-bottom: 1.75rem;
+}
+.note { color :var(--ink-soft); font-size: .95rem; }
+
+ul { padding-left: 1.25rem; }
+li { margin-bottom: .4rem; }
+
+/* ------------- Tabla ------------- */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { padding:.9rem 1.1rem; text-align: left; }
+thead td { background: var(--ink); color: var(--white); font-family: var(--font-head); font-size: .92rem; font-weight: 600; }
+tbody tr + tr td { border-top: 1px solid var(--line); }
+tbody tr:hover { background: #eef4f6; }
+.num { text-align: right; white-space: nowrap; font-weight: 600; }
+
+/* ------------- Formulario ------------- */
+
+form { display: grid; gap: .35rem; max-width: 560px; }
+label { font-weight: 600; margin-top: .7rem; }
+input, select, textarea {
+    width: 100%;
+    font: inherit;
+    padding: .65rem .8rem;
+    border: 1.5px solid #b9c6ce;
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--ink);
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(14,124,134,.25);
+}
+form button { justify-self: start; margin-top: 1rem; }
+#form-estado { margin: .5rem 0 0; font-weight: 600; color: var(--teal-dark); min-height: 1.5em; }
+
+/* ------------- Footer Fijo ------------- */
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    height: var(--footer-h);
+    background: var(--ink);
+    color: #cfdbe2;
+    font-size: .88rem;
+    border-top: 3px solid var(--amber);
+}
+.footer-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+footer a { color: var(--white); font-weight: 600; }
+
+/* ------------- Responsive ------------- */
+@media (max-width: 700px) {
+    :root { --footer-h: 78px; }
+    .footer-inner { flex-direction: column; justify-content: center; gap: 1rem; text-align: center; font-size: .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
