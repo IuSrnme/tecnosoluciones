@@ -11,6 +11,7 @@
 </head>
 <body>
 
+
     <header>
         <div class="container header-inner">
             <a href="index.html" class="brand">TecnoSoluciones</a>
@@ -38,6 +39,16 @@
     </section>
 
     <main class="container">
+        <section id="como-funciona">
+            <h2>Cómo funciona</h2>
+            <p class="note">Tres pasos, y solo te visitamos si hace falta.</p>
+            <div class="steps">
+                <div class="step"><span class="step-n">Paso 1</span><h3>Cuéntanos tu problema</h3><p>Llena el formulario con lo que está pasando.</p></div>
+                <div class="step"><span class="step-n">Paso 2</span><h3>Te llamamos</h3><p>Revisamos el caso contigo y tratamos de resolverlo en línea.</p></div>
+                <div class="step"><span class="step-n">Paso 3</span><h3>Visita si hace falta</h3><p>Si no se soluciona a distancia, un especialista revisa el equipo en persona.</p></div>
+            </div>
+        </section>
+
         <section id="servicios">
             <h2>Catálogo de Servicios y Precios</h2>
             <p class="note">Nota: Los siguientes precios son valores de referencia para fines académicos.</p>
@@ -87,11 +98,13 @@
                 <input type="email" id="correo" name="correo" required>
 
                 <label for="servicio-select">Servicio Requerido:</label>
+                <div class="select">
                 <select id="servicio-select" name="servicio" required>
                     <option value="preventivo">Mantenimiento Preventivo</option>
                     <option value="software">Instalación de Software</option>
                     <option value="redes">Configuración de Redes</option>
                 </select>
+                </div>
 
                 <label for="descripcion">Descripción del Problema:</label>
                 <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
