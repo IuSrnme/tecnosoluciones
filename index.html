@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TecnoSoluciones - Soporte Técnico</title>
-    <link rel=""preconnect" href=""https://fonts.googleapis.com">
-    <link rel=""preconnect" href=""https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,23 +13,26 @@
 
     <header>
         <div class="container header-inner">
-            <a href="index.html" class=" brand">TecnoSoluciones</a>
-            <nav>
+            <a href="index.html" class="brand">TecnoSoluciones</a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="menu">
                 <a href="#servicios">Servicios</a>
+                <a href="ayuda.html">Ayuda rápida</a>
                 <a href="#contacto">Contacto</a>
                 <a href="tyc.html">Términos</a>
             </nav>
         </div>
     </header>
 
-
     <section class="hero">
         <div class="container">
             <h1>Tu computador funcionando, sin complicaciones.</h1>
             <p>Servicios de soporte informático y mantenimiento de equipos.</p>
-            <div>
+            <div class="hero-actions">
                 <a href="#contacto" class="btn">Solicitar asistencia</a>
-                <a href="#servicios" class="btn btn-ghost">Ver precios</a>
+                <a href="ayuda.html" class="btn btn-ghost">Ayuda rápida gratis</a>
             </div>
         </div>
     </section>
@@ -49,35 +52,41 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Mantenimiento Preventivo</td>
-                            <td>Limpieza física de componentes y cambio de pasta térmica.</td>
-                            <td class="num">$45.000 COP</td>
+                            <td data-label="Servicio">Mantenimiento Preventivo</td>
+                            <td data-label="Descripción">Limpieza física de componentes y cambio de pasta térmica.</td>
+                            <td data-label="Precio" class="num">$45.000 COP</td>
                         </tr>
                         <tr>
-                            <td>Instalación de Software</td>
-                            <td>Instalación de sistemas operativos y paquetes de programas esenciales.</td>
-                            <td class="num">$30.000 COP</td>
+                            <td data-label="Servicio">Instalación de Software</td>
+                            <td data-label="Descripción">Instalación de sistemas operativos y paquetes de programas esenciales.</td>
+                            <td data-label="Precio" class="num">$30.000 COP</td>
                         </tr>
                         <tr>
-                            <td>Configuración de Redes</td>
-                            <td>Configuración de enrutadores, Wi-Fi y seguridad local.</td>
-                            <td class="num">$50.000 COP</td>
+                            <td data-label="Servicio">Configuración de Redes</td>
+                            <td data-label="Descripción">Configuración de enrutadores, Wi-Fi y seguridad local.</td>
+                            <td data-label="Precio" class="num">$50.000 COP</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
+        <section id="ayuda-aviso">
+            <h2>¿Quieres probar antes de pedir ayuda?</h2>
+            <p>Reunimos soluciones a los problemas más comunes, explicadas paso a paso y gratis. Si tu caso no aparece o no se resuelve, ahí mismo puedes solicitar asistencia.</p>
+            <a href="ayuda.html" class="btn">Ver ayuda rápida</a>
+        </section>
+
         <section id="contacto">
             <h2>Formulario de Solicitud de Asistencia</h2>
             <form id="form-contacto">
-                <label for="nombre">Nombre</label>
+                <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
-                <label for="correo">Correo Electrónico</label>
+                <label for="correo">Correo Electrónico:</label>
                 <input type="email" id="correo" name="correo" required>
 
-                <label for="servicio-select">Servicio Requerido</label>
+                <label for="servicio-select">Servicio Requerido:</label>
                 <select id="servicio-select" name="servicio" required>
                     <option value="preventivo">Mantenimiento Preventivo</option>
                     <option value="software">Instalación de Software</option>
@@ -88,7 +97,7 @@
                 <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
                 <button type="submit">Enviar Solicitud</button>
-                <p id="form-estado" role="status" aria-live="polite"></p></p>
+                <p id="form-estado" role="status" aria-live="polite"></p>
             </form>
             <p class="note"><em>Aviso: Este formulario es demostrativo y no procesa solicitudes reales.</em></p>
         </section>
@@ -96,8 +105,9 @@
 
     <footer>
         <div class="container footer-inner">
-            <span>TecnoSoluciones - Operado por el Equipo de Desarrollo Académico SENA</span>
-            <a href="tyc.html">Términos y Condiciones (Aviso de Sitio Demostrativo)</a>
+            <span class="f-full">TecnoSoluciones - Operado por el Equipo de Desarrollo Académico SENA</span>
+            <span class="f-short">TecnoSoluciones · Proyecto SENA</span>
+            <a href="tyc.html">Términos y Condiciones<span class="f-full"> (Aviso de Sitio Demostrativo)</span></a>
         </div>
     </footer>
 

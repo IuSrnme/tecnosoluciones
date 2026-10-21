@@ -14,8 +14,12 @@
     <header>
         <div class="container header-inner">
             <a href="index.html" class="brand">TecnoSoluciones</a>
-            <nav>
+            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="menu">
                 <a href="index.html#servicios">Servicios</a>
+                <a href="ayuda.html">Ayuda rápida</a>
                 <a href="index.html#contacto">Contacto</a>
                 <a href="tyc.html">Términos</a>
             </nav>
@@ -25,7 +29,7 @@
     <section class="hero hero-small">
         <div class="container">
             <h1>Términos y Condiciones</h1>
-            <p>Aviso Legal y Descargo de Responsabilidad.</p>
+            <p>Aviso Legal y Descargo de Responsabilidad</p>
         </div>
     </section>
 
@@ -38,7 +42,7 @@
             <p><strong>Carácter No Funcional:</strong> Aunque la interfaz simule una plataforma comercial activa, se aclara explícitamente que:</p>
             <ul>
                 <li>Los servicios, precios y cotizaciones mostrados son meramente ficticios y de referencia pedagógica.</li>
-                <li>El formulario de contacto es de carácter ilustrativo y no almacena, procesa ni envia solicitudes ni datos reales.</li>
+                <li>El formulario de contacto es de carácter ilustrativo y no almacena, procesa ni envía solicitudes ni datos reales.</li>
                 <li>No se prestan servicios comerciales ni se reciben transacciones de dinero reales a través de esta página.</li>
             </ul>
 
@@ -50,9 +54,12 @@
 
     <footer>
         <div class="container footer-inner">
-            <span>TecnoSoluciones - Proyecto Académico SENA</span>
+            <span class="f-full">TecnoSoluciones - Proyecto Académico SENA</span>
+            <span class="f-short">TecnoSoluciones · Proyecto SENA</span>
+            <a href="index.html">Volver al inicio</a>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
