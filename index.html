@@ -21,6 +21,7 @@
             <nav id="menu">
                 <a href="#servicios">Servicios</a>
                 <a href="ayuda.html">Ayuda rápida</a>
+                <a href="blog.html">Noticias</a>
                 <a href="#contacto">Contacto</a>
                 <a href="tyc.html">Términos</a>
             </nav>
@@ -90,29 +91,40 @@
 
         <section id="contacto">
             <h2>Formulario de Solicitud de Asistencia</h2>
-            <form id="form-contacto">
+            <form id="form-contacto" action="https://formspree.io/f/xrppdovo" method="POST">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
                 <label for="correo">Correo Electrónico:</label>
                 <input type="email" id="correo" name="correo" required>
 
+                <label for="telefono">Teléfono o WhatsApp:</label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+
                 <label for="servicio-select">Servicio Requerido:</label>
                 <div class="select">
                 <select id="servicio-select" name="servicio" required>
-                    <option value="preventivo">Mantenimiento Preventivo</option>
-                    <option value="software">Instalación de Software</option>
-                    <option value="redes">Configuración de Redes</option>
+                    <option value="Mantenimiento Preventivo">Mantenimiento Preventivo</option>
+                    <option value="Instalación de Software">Instalación de Software</option>
+                    <option value="Configuración de Redes">Configuración de Redes</option>
                 </select>
                 </div>
 
                 <label for="descripcion">Descripción del Problema:</label>
                 <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
+                <input type="hidden" name="_subject" value="Nueva solicitud de asistencia - TecnoSoluciones">
+                <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <label class="consent">
+                    <input type="checkbox" name="consentimiento" value="Sí" required>
+                    <span>Acepto que mis datos se usen solo para responder esta solicitud, según los <a href="tyc.html">Términos y Condiciones</a>.</span>
+                </label>
+
                 <button type="submit">Enviar Solicitud</button>
                 <p id="form-estado" role="status" aria-live="polite"></p>
             </form>
-            <p class="note"><em>Aviso: Este formulario es demostrativo y no procesa solicitudes reales.</em></p>
+            <p class="note"><em>Aviso: Este sitio es un proyecto académico. Las solicitudes llegan a una cuenta de pruebas del equipo y no se prestan servicios reales.</em></p>
         </section>
     </main>
 

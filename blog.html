@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias y Proyectos - TecnoSoluciones</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="brand">TecnoSoluciones</a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="menu">
+                <a href="index.html#servicios">Servicios</a>
+                <a href="ayuda.html">Ayuda rápida</a>
+                <a href="blog.html">Noticias</a>
+                <a href="index.html#contacto">Contacto</a>
+                <a href="tyc.html">Términos</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero-small">
+        <div class="container">
+            <h1>Noticias y proyectos</h1>
+            <p>Lo que hemos resuelto, lo que aprendimos y consejos que te sirven en casa o en tu negocio.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="destacado" class="hidden"></section>
+        <section id="publicaciones" class="hidden">
+            <h2>Más publicaciones</h2>
+            <div class="posts-grid" id="lista"></div>
+        </section>
+        <p id="blog-estado" class="note" role="status">Cargando publicaciones…</p>
+
+        <section>
+            <h2>¿Tienes un problema parecido?</h2>
+            <p>Cuéntanos qué te pasa y te ayudamos.</p>
+            <a href="index.html#contacto" class="btn">Solicitar asistencia</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span class="f-full">TecnoSoluciones - Operado por el Equipo de Desarrollo Académico SENA</span>
+            <span class="f-short">TecnoSoluciones · Proyecto SENA</span>
+            <a href="tyc.html">Términos y Condiciones<span class="f-full"> (Aviso de Sitio Demostrativo)</span></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="blog.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - TecnoSoluciones</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="brand">TecnoSoluciones</a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="menu">
+                <a href="index.html#servicios">Servicios</a>
+                <a href="ayuda.html">Ayuda rápida</a>
+                <a href="blog.html">Noticias</a>
+                <a href="index.html#contacto">Contacto</a>
+                <a href="tyc.html">Términos</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero-small">
+        <div class="container"><h1>Panel del administrador</h1></div>
+    </section>
+
+    <main class="container">
+        <section id="login">
+            <h2>Iniciar sesión</h2>
+            <form id="form-login">
+                <label for="l-correo">Correo:</label>
+                <input type="email" id="l-correo" autocomplete="username" required>
+                <label for="l-clave">Contraseña:</label>
+                <input type="password" id="l-clave" autocomplete="current-password" required>
+                <button type="submit">Entrar</button>
+                <p id="l-estado" class="error" role="status"></p>
+            </form>
+        </section>
+
+        <section id="editor" class="hidden">
+            <h2 id="editor-titulo">Nueva publicación</h2>
+            <form id="form-post">
+                <label for="f-titulo">Título:</label>
+                <input type="text" id="f-titulo" maxlength="150" required>
+
+                <label for="f-tag">Etiqueta (ej. Proyecto, Consejo):</label>
+                <input type="text" id="f-tag" maxlength="30">
+
+                <label for="f-resumen">Resumen corto:</label>
+                <textarea id="f-resumen" rows="2" maxlength="300" required></textarea>
+
+                <label for="f-portada-file">Imagen de portada:</label>
+                <input type="file" id="f-portada-file" accept="image/*">
+                <input type="hidden" id="f-portada">
+                <p class="note" id="f-portada-info"></p>
+
+                <label for="f-contenido">Texto de la publicación:</label>
+                <p class="note">Separa los párrafos con una línea en blanco. Subtítulo: <code>## Mi subtítulo</code>. Lista: líneas que empiezan con <code>- </code>.</p>
+                <textarea id="f-contenido" rows="14" required></textarea>
+                <div>
+                    <button type="button" class="btn btn-sm" id="btn-img">Insertar imagen en el texto</button>
+                    <input type="file" id="f-img-file" accept="image/*" class="hidden">
+                </div>
+
+                <label class="consent"><input type="checkbox" id="f-pub" checked><span>Publicar (visible para todos)</span></label>
+
+                <div class="acts">
+                    <button type="submit" id="btn-guardar">Guardar publicación</button>
+                    <button type="button" class="btn btn-ghost btn-sm" id="btn-cancelar" style="color:var(--ink);border-color:var(--line)">Cancelar edición</button>
+                </div>
+                <p id="a-estado" role="status"></p>
+            </form>
+        </section>
+
+        <section id="lista-sec" class="hidden">
+            <h2>Mis publicaciones</h2>
+            <div id="lista-admin"></div>
+            <p><button type="button" class="btn btn-sm" id="salir">Cerrar sesión</button></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span class="f-full">TecnoSoluciones - Operado por el Equipo de Desarrollo Académico SENA</span>
+            <span class="f-short">TecnoSoluciones · Proyecto SENA</span>
+            <a href="tyc.html">Términos y Condiciones<span class="f-full"> (Aviso de Sitio Demostrativo)</span></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="admin.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

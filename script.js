@@ -19,17 +19,42 @@ if (toggle && menu) {
   });
 }
 
-// ---------- Formulario demostrativo ----------
-// No envía nada a ningún servidor.
+// ---------- Formulario de solicitud ----------
+// Envía los datos al servicio indicado en el atributo "action" del formulario (Formspree).
 const form = document.getElementById("form-contacto");
 const estado = document.getElementById("form-estado");
 
 if (form && estado) {
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    if (form.action.includes("TU_ID_AQUI")) {
+      estado.className = "error";
+      estado.textContent = "El formulario aún no está conectado. Falta poner el ID de Formspree en index.html.";
+      return;
+    }
+
+    const boton = form.querySelector('button[type="submit"]');
     const nombre = form.nombre.value.trim();
-    estado.textContent = `Gracias, ${nombre}. Esto es una demostración: tu solicitud no se envió.`;
-    form.reset();
+    boton.disabled = true;
+    estado.className = "";
+    estado.textContent = "Enviando…";
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("Respuesta " + res.status);
+      estado.textContent = `Gracias, ${nombre}. Recibimos tu solicitud y te contactaremos pronto.`;
+      form.reset();
+    } catch (err) {
+      estado.className = "error";
+      estado.textContent = "No pudimos enviar tu solicitud. Revisa tu conexión e inténtalo de nuevo.";
+    } finally {
+      boton.disabled = false;
+    }
   });
 }
 
