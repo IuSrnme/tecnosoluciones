@@ -8,12 +8,13 @@
     --teal-dark: #0a5f67;
     --amber: #f2a900;
     --line: #d8e0e5;
+    --bar: #0a1822;
+    --bar-line: #223645;
 
     --font-head: "Sora", "Segoe UI", system-ui, sans-serif;
     --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
 
     --header-h: 64px;
-    --footer-h: 56px;
 }
 
 /* ---------- Base ---------- */
@@ -31,8 +32,11 @@ body {
     line-height: 1.6;
     color: var(--ink);
     background: var(--paper);
-    /* Espacio para que el footer fijo no tape el final del contenido */
-    padding-bottom: calc(var(--footer-h) + 32px);
+    /* El footer queda al final de la página (o al fondo de la pantalla si hay poco contenido) */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 h1, h2 { font-family: var(--font-head); line-height: 1.2; margin: 0 0 .6em; }
@@ -51,7 +55,8 @@ header {
     top: 0;
     z-index: 30;
     height: var(--header-h);
-    background: var(--ink);
+    background: var(--bar);
+    border-bottom: 1px solid var(--bar-line);
 }
 .header-inner {
     height: 100%;
@@ -133,7 +138,7 @@ header nav a:hover { background: rgba(255,255,255,.1); color: var(--white); }
 .btn-ghost:hover { background: transparent; border-color: var(--white); }
 
 /* ---------- Secciones ---------- */
-main { padding-top: 2.5rem; }
+main { padding-top: 2.5rem; flex: 1 0 auto; }
 
 main section {
     background: var(--white);
@@ -218,22 +223,16 @@ input:focus, select:focus, textarea:focus {
 form button { justify-self: start; margin-top: 1rem; }
 #form-estado { margin: .5rem 0 0; font-weight: 600; color: var(--teal-dark); min-height: 1.5em; }
 
-/* ---------- Footer fijo ---------- */
+/* ---------- Footer (al final de la página) ---------- */
 footer {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 20;
-    height: calc(var(--footer-h) + env(safe-area-inset-bottom, 0px));
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    background: var(--ink);
+    margin-top: 1rem;
+    padding: 1.1rem 0 calc(1.1rem + env(safe-area-inset-bottom, 0px));
+    background: var(--bar);
     color: #cfdbe2;
     font-size: .88rem;
     border-top: 3px solid var(--amber);
 }
 .footer-inner {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -244,8 +243,6 @@ footer a { color: var(--white); font-weight: 600; }
 
 /* ---------- Celular ---------- */
 @media (max-width: 700px) {
-    :root { --footer-h: 60px; }
-
     body { font-size: 1rem; }
     .container { width: calc(100% - 2rem); }
 
@@ -260,8 +257,8 @@ footer a { color: var(--white); font-weight: 600; }
         flex-direction: column;
         gap: 0;
         padding: .5rem 1rem 1rem;
-        background: var(--ink);
-        border-top: 1px solid #25394a;
+        background: var(--bar);
+        border-top: 1px solid var(--bar-line);
         box-shadow: 0 12px 24px rgba(0,0,0,.25);
     }
     header nav.open { display: flex; }
